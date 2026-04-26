@@ -1,14 +1,11 @@
-
 'use client';
-import Link from "next/link";
 import { useDialog } from "@/app/context/dialog-context";
 
 export default function HeroSection() {
-
   const { openDialog } = useDialog()
 
   return (
-    <div className="relative w-full h-[400px] overflow-hidden mb-20 mt-16">
+    <div className="relative w-full h-[250px] sm:h-[300px] md:h-[400px] overflow-hidden mb-10 md:mb-20 mt-8 md:mt-16">
 
       {/* Fixed Background Image */}
       <div
@@ -22,20 +19,19 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-black/40" />
 
       {/* Content */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center">
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-4">
 
-        <p className="text-sm tracking-widest mb-2 text-gray-200">
+        <p className="text-xs md:text-sm tracking-widest mb-2 text-gray-200">
           Feel Free to Contact Us..
         </p>
 
-        <h1 className="text-4xl md:text-5xl font-semibold mb-8">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold mb-6 md:mb-8">
           Schedule A Visit —
         </h1>
 
         <button
           onClick={openDialog}
-          className="bg-white text-black px-8 py-3 rounded-sm font-medium hover:bg-gray-100 transition-colors cursor-pointer
-          "
+          className="btn-shine bg-white text-black px-6 md:px-8 py-2.5 md:py-3 rounded-sm font-medium text-sm md:text-base hover:bg-gray-100 transition-colors cursor-pointer"
         >
           Enquire Now
         </button>

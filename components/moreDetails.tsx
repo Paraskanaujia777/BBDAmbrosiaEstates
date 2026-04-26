@@ -12,7 +12,7 @@ export default function ReadMoreSection() {
       id: 1,
       heading: "About BBD Green City Lucknow",
       content: (
-        <p className="text-gray-700 text-sm leading-relaxed text-justify">
+        <p className="text-gray-700 text-xs md:text-sm leading-relaxed text-justify">
           <strong>BBD Ambrosia Estate</strong> is an upcoming premium residential villa project located near{" "}
           <strong>BBD Green City on Faizabad (Ayodhya) Road, Lucknow</strong>. Designed to offer a modern
           and peaceful lifestyle, this project brings together luxury living, green surroundings and excellent
@@ -29,7 +29,7 @@ export default function ReadMoreSection() {
       id: 2,
       heading: "Modern Villa Design & Living Experience",
       content: (
-        <p className="text-gray-700 text-sm leading-relaxed text-justify">
+        <p className="text-gray-700 text-xs md:text-sm leading-relaxed text-justify">
           The villas at <strong>BBD Ambrosia</strong> are designed with a focus on modern architecture, natural
           light and ventilation. Every home is planned to provide maximum comfort, functional space and elegant
           aesthetics. Wide roads, landscaped greenery and open areas create a peaceful living environment where
@@ -42,7 +42,7 @@ export default function ReadMoreSection() {
       id: 3,
       heading: "Location Advantage Of BBD Ambrosia Estate",
       content: (
-        <p className="text-gray-700 text-sm leading-relaxed text-justify">
+        <p className="text-gray-700 text-xs md:text-sm leading-relaxed text-justify">
           Located on <strong>Faizabad Road near BBD Green City</strong>, the project enjoys excellent
           connectivity to major parts of Lucknow. The location provides smooth access to{" "}
           <strong>Gomti Nagar Extension, Shaheed Path, Indira Nagar and Hazratganj</strong>. It is also close
@@ -55,18 +55,18 @@ export default function ReadMoreSection() {
   ]
 
   return (
-    <div className="w-full px-8 md:px-16 py-12">
+    <div className="w-full px-4 sm:px-8 md:px-16 py-8 md:py-12">
 
       {/* Read More Button */}
       <button
         onClick={() => setIsExpanded(!isExpanded)}
-        className="flex items-center gap-2 text-2xl font-bold text-[#487800] hover:text-[#487800] transition-colors mb-4"
+        className="flex items-center gap-2 text-lg sm:text-xl md:text-2xl font-bold text-[#487800] hover:text-[#3a6200] transition-colors mb-4"
       >
         {isExpanded ? "Read Less..." : "Read More..."}
         {isExpanded ? (
-          <ChevronUp className="w-6 h-6" />
+          <ChevronUp className="w-5 h-5 md:w-6 md:h-6" />
         ) : (
-          <ChevronDown className="w-6 h-6" />
+          <ChevronDown className="w-5 h-5 md:w-6 md:h-6" />
         )}
       </button>
 
@@ -75,12 +75,12 @@ export default function ReadMoreSection() {
 
       {/* Expandable Content */}
       {isExpanded && (
-        <div className="flex flex-col gap-10 mt-8 animate-in fade-in duration-300">
+        <div className="flex flex-col gap-6 md:gap-10 mt-6 md:mt-8 animate-in fade-in duration-300">
           {sections.map((section) => (
-            <div key={section.id} className="flex flex-col gap-3">
+            <div key={section.id} className="flex flex-col gap-2 md:gap-3">
 
               {/* Section Heading */}
-              <h3 className="text-xl font-bold text-gray-900">
+              <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900">
                 {section.heading}
               </h3>
 
@@ -93,9 +93,9 @@ export default function ReadMoreSection() {
           {/* Read Less Button at Bottom */}
           <button
             onClick={() => setIsExpanded(false)}
-            className="flex items-center gap-2 text-[#487800] font-semibold hover:text-[#487800] transition-colors"
+            className="flex items-center gap-2 text-sm md:text-base text-[#487800] font-semibold hover:text-[#3a6200] transition-colors"
           >
-            <ChevronUp className="w-5 h-5" />
+            <ChevronUp className="w-4 h-4 md:w-5 md:h-5" />
             Read Less
           </button>
 
