@@ -2,7 +2,7 @@
 import AboutSection from "@/components/about";
 import AllIcons from "@/components/allIcons";
 import AmenitiesSection from "@/components/amenities";
-import ContactForm from "@/components/contactForm";
+import FloorPlanSection from "@/components/floorPlans";
 import SiteVisitFooter from "@/components/footer";
 import PropertyHero from "@/components/heroPropertySection";
 import HeroSection from "@/components/heroSection";
@@ -10,60 +10,54 @@ import LocationAdvantages from "@/components/Location";
 import ReadMoreSection from "@/components/moreDetails";
 import PricingSection from "@/components/pricingSection";
 
-
 export default function Home() {
-
-
   return (
     <div>
-      <main >
+      <main>
 
-        {/* <HeroSectionTop></HeroSectionTop> */}
-        <PropertyHero></PropertyHero>
+        {/* Hero Carousel */}
+        <div id="overview">
+          <PropertyHero />
+        </div>
 
-        {/* form and data */}
+        {/* About + Contact Form */}
+        <AboutSection />
 
-        <AboutSection></AboutSection>
+        {/* Amenities Icons */}
+        <AllIcons />
 
-        {/* all icons  */}
+        {/* Amenities Section */}
+        <div id="amenities">
+          <AmenitiesSection />
+        </div>
 
-        <AllIcons></AllIcons>
-
-
-        {/* Hero section  */}
-        <HeroSection></HeroSection>
-
+        {/* Hero CTA Section */}
+        <HeroSection />
 
         {/* Pricing */}
+        <div id="pricing">
+          <PricingSection />
+        </div>
 
-        <PricingSection></PricingSection>
+        {/* Floor Plans */}
+        <div id="floorplan">
+          <FloorPlanSection />
+        </div>
 
+        {/* Location */}
+        <div id="location">
+          <LocationAdvantages />
+        </div>
 
-        {/* Location Advantages */}
+        {/* Read More */}
+        <ReadMoreSection />
 
-        <LocationAdvantages></LocationAdvantages>
+        {/* Footer / Contact */}
+        <div id="contact">
+          <SiteVisitFooter />
+        </div>
 
-        {/* Amenities section */}
-
-        <AmenitiesSection></AmenitiesSection>
-
-        {/* More Details  */}
-
-        <ReadMoreSection></ReadMoreSection>
-
-
-
-        {/* Footer */}
-
-        <SiteVisitFooter></SiteVisitFooter>
-
-
-        
-
-
-
-      </main >
-
-    </div >
-  );
+      </main>
+    </div>
+  )
 }

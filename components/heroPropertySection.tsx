@@ -149,7 +149,7 @@ export default function PropertyHero() {
             {/* Offers Box - hidden on small mobile */}
             <div className="hidden sm:flex border-2 border-dashed border-[#487800] bg-[#8b1a2d]/5 rounded p-3 md:p-4 flex-col gap-1">
               {offers.map((offer, i) => (
-                <p key={i} className="text-[#487800] font-semibold text-xs md:text-sm">
+                <p key={i} className="text-[#487800] font-semibold text-xs md:text-sm text-center">
                   {offer}
                 </p>
               ))}

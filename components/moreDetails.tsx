@@ -71,11 +71,35 @@ export default function ReadMoreSection() {
       </button>
 
       {/* Divider */}
-      <hr className="border-gray-300" />
+      <hr className="border-gray-300 mb-4" />
 
-      {/* Expandable Content */}
+      {/* Preview Lines — always visible */}
+      {!isExpanded && (
+        <div className="relative">
+
+          {/* Preview Text */}
+          <div className="overflow-hidden max-h-[80px]">
+            <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-1">
+              About BBD Green City Lucknow
+            </h3>
+            <p className="text-gray-500 text-xs md:text-sm leading-relaxed text-justify">
+              <strong>BBD Ambrosia Estate</strong> is an upcoming premium residential villa project
+              located near <strong>BBD Green City on Faizabad (Ayodhya) Road, Lucknow</strong>.
+              Designed to offer a modern and peaceful lifestyle, this project brings together luxury
+              living, green surroundings and excellent connectivity in one of Lucknow's fastest
+              growing areas...
+            </p>
+          </div>
+
+          {/* Fade overlay */}
+          <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-white to-transparent" />
+
+        </div>
+      )}
+
+      {/* Full Expandable Content */}
       {isExpanded && (
-        <div className="flex flex-col gap-6 md:gap-10 mt-6 md:mt-8 animate-in fade-in duration-300">
+        <div className="flex flex-col gap-6 md:gap-10 mt-2 animate-in fade-in duration-300">
           {sections.map((section) => (
             <div key={section.id} className="flex flex-col gap-2 md:gap-3">
 

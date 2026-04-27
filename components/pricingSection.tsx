@@ -13,6 +13,18 @@ export default function PricingSection() {
       buildUpArea: "On Request",
       onDemand: "Request",
     },
+    {
+      id: 2,
+      type: "4.5 BHK",
+      buildUpArea: "On Request",
+      onDemand: "Request",
+    },
+    {
+      id: 3,
+      type: "5.5 BHK",
+      buildUpArea: "On Request",
+      onDemand: "Request",
+    },
   ]
 
   return (

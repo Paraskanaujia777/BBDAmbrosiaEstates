@@ -2,10 +2,20 @@
 
 import { useState } from "react"
 import { useDialog } from "@/app/context/dialog-context"
+import Link from "next/link"
 
 const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbwDnqIXi2AHbZM1iTkf4vn0BbbVlj-27B1mWEsisTOx4CwWuE0Bo3fYSxtHnBJ69-G6/exec"
 
 export default function SiteVisitFooter() {
+
+  const currentYear = new Date().getFullYear()
+
+  const links = [
+    { label: "Terms & Conditions", href: "/terms" },
+    { label: "Privacy Policy",     href: "/privacy" },
+    { label: "Cookies Policy",     href: "/cookies" },
+  ]
+
   const { openDialog } = useDialog()
 
   const [formData, setFormData] = useState({
@@ -93,15 +103,33 @@ export default function SiteVisitFooter() {
 
       {/* Disclaimer */}
       <div className="px-4 sm:px-8 md:px-16 py-4 md:py-6">
-        <p className="text-gray-300 text-xs leading-relaxed text-center md:text-left">
-          <span className="font-bold text-white">Disclaimer:</span> The content
-          on this website is for information purposes only and does not
-          constitute an offer to avail of any service. Prices mentioned are
-          subject to change without notice and properties mentioned are subject
-          to availability. Images are for representation purposes only. This is
-          the official website of authorized marketing partner. We may also send
-          updates to the mobile number/email id registered with us.
+        <p className="text-gray-300 text-sm leading-relaxed text-center md:text-left">
+          <span className="font-bold text-white">Disclaimer:</span> We are an authorised marketing partner for this project. Provided content is given by respective owners and this website and content is for information purpose only and it does not constitute any offer to avail for any services. Prices mentioned are subject to change without prior notice and properties mentioned are subject to availability. You can expect a call, SMS or emails on details registered with us.
         </p>
+      </div>
+
+      {/* <FooterBottom/> */}
+
+      <div className="px-4 sm:px-8 md:px-16 py-4 md:py-5 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-0">
+
+        {/* Copyright */}
+        <p className="text-white text-xs md:text-sm text-center">
+          Copyright © {currentYear} |{" "}
+          {links.map((link, index) => (
+            <span key={link.href}>
+              <Link
+                href={link.href}
+                className="text-white hover:text-[#487800] hover:underline transition-colors font-medium"
+              >
+                {link.label}
+              </Link>
+              {index < links.length - 1 && (
+                <span className="text-gray-400 mx-1">|</span>
+              )}
+            </span>
+          ))}
+        </p>
+
       </div>
 
     </div>

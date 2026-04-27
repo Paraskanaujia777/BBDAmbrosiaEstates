@@ -71,12 +71,12 @@ export default function AmenitiesSection() {
         <h1 className="text-xl sm:text-2xl md:text-4xl font-bold text-[#487800]">
           Amenities Of BBD Ambrosia Estate
         </h1>
-        <Button
+        {/* <Button
           onClick={openDialog}
           className="btn-shine bg-[#487800] hover:bg-[#3a4e10] text-white px-4 md:px-6 text-sm md:text-base w-full sm:w-auto"
         >
           Download Amenities
-        </Button>
+        </Button> */}
       </div>
 
       {/* Carousel Wrapper */}
