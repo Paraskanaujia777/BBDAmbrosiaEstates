@@ -3,7 +3,7 @@
 import { Phone } from "lucide-react"
 import { useDialog } from "@/app/context/dialog-context"
 
-const PHONE_NUMBER = "9919999468"
+const PHONE_NUMBER = "9918016160"
 const WHATSAPP_MESSAGE = "Hello! I'm interested in BBD Ambrosia Estate."
 
 export default function FloatingButtons() {

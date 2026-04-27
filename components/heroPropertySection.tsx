@@ -19,9 +19,9 @@ const offers = [
 ]
 
 const details = [
-  { label: "Land Parcel", value: "On Demand" },
-  { label: "Floors",      value: "On Demand" },
-  { label: "Possession",  value: "On Demand" },
+  { label: "Land Parcel", value: "25 Acres" },
+  { label: "Floors",      value: "G+2" },
+  { label: "Possession",  value: "December 2030" },
 ]
 
 const stats = [
@@ -105,8 +105,9 @@ export default function PropertyHero() {
           bg-white rounded-lg overflow-hidden shadow-2xl">
 
           {/* Banner */}
-          <div className="bg-[rgb(72,120,0)] text-white text-center text-xs md:text-sm font-medium py-2">
-            Booking Open: Limited Time Only
+          <div className="bg-[rgb(72,120,0)] text-white text-center text-xs md:text-xl font-medium py-2 
+          ">
+            COMING SOON
           </div>
 
           {/* Card Body */}
@@ -114,19 +115,23 @@ export default function PropertyHero() {
 
             {/* Title */}
             <div>
-              <h1 className="text-lg md:text-2xl font-bold text-gray-900">
-                Ambrosia Estates Phase 1
+              <h1 className="text-lg md:text-2xl font-bold text-gray-900 text-center
+              ">
+                BBD Ambrosia Estates 
               </h1>
-              <p className="text-gray-500 text-xs md:text-sm mt-1">
+              <p className="text-gray-500 text-xs md:text-sm mt-1 text-center
+              ">
                 At BBD Green City, Faizabad Road, Lucknow{" "}
-                <span className="font-medium text-gray-700">
+                <br />
+                <span className="font-medium text-gray-700 text-center"><p className="text-center">
                   By Viraj Constructions Pvt.Ltd.
+                  </p>
                 </span>
               </p>
             </div>
 
             {/* Google Rating */}
-            <div className="flex items-center gap-1 md:gap-2">
+            {/* <div className="flex items-center gap-1 md:gap-2">
               <span className="text-blue-500 font-bold text-base md:text-lg">G</span>
               <div className="flex">
                 {[...Array(5)].map((_, i) => (
@@ -134,12 +139,13 @@ export default function PropertyHero() {
                 ))}
               </div>
               <span className="text-xs md:text-sm text-gray-600">4.8 Stars 115 Reviews</span>
-            </div>
+            </div> */}
 
             {/* Property Details */}
             <div className="border border-gray-200 rounded p-2 md:p-3 flex flex-col gap-1 md:gap-2">
               {details.map((d, i) => (
-                <div key={i} className="flex gap-3 md:gap-6 text-xs md:text-sm">
+                <div key={i} className="flex gap-3 md:gap-6 text-xs md:text-sm justify-center
+                ">
                   <span className="text-gray-500 w-20 md:w-24 shrink-0">{d.label}</span>
                   <span className="font-bold text-gray-800">{d.value}</span>
                 </div>
@@ -180,30 +186,7 @@ export default function PropertyHero() {
       </div>
 
       {/* ── Stats Bar ── */}
-      <div className="bg-gray-200">
-        <div className="grid grid-cols-2 md:grid-cols-4">
-          {stats.map((stat, index) => (
-            <div
-              key={index}
-              className="flex flex-row items-center gap-3 p-4 border-b md:border-b-0 border-gray-300 md:border-r last:border-r-0"
-            >
-              {/* Icon */}
-              <House className="w-6 h-6 md:w-8 md:h-8 text-[rgb(72,120,0)] shrink-0" />
-
-              {/* Text */}
-              <div>
-                <p className="text-gray-600 text-xs md:text-sm">{stat.label}</p>
-                <h3
-                  className="font-bold text-sm md:text-base cursor-pointer hover:text-[rgb(72,120,0)] transition-colors"
-                  onClick={openDialog}
-                >
-                  {stat.value}
-                </h3>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
+    
     </>
   )
 }

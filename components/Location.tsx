@@ -2,11 +2,12 @@ export default function LocationAdvantages() {
 
   const locations = [
     { place: "Dr. Akhilesh Das Gupta School", time: "1 Min" },
-    { place: "Crown Mall",                    time: "3 Mins" },
-    { place: "Gomti Nagar Railway Station",   time: "7-10 Mins" },
+    { place: "Crown Mall",                    time: "2 Mins" },
+    { place: "Gomti Nagar Railway Station",   time: "9 Mins" },
     { place: "Amar Shaheed Path",             time: "6 Mins" },
     { place: "Chandan Hospital",              time: "5 Mins" },
     { place: "Outer Ring Road",               time: "4 Mins" },
+    { place: "Amausi Airport",               time: "45 Mins" },
   ]
 
   return (
@@ -37,13 +38,13 @@ export default function LocationAdvantages() {
               {/* Location dot */}
               <div className="flex items-center gap-3">
                 <div className="w-2 h-2 rounded-full bg-[#487800] shrink-0" />
-                <span className="text-gray-700 text-sm md:text-base">
+                <span className="text-gray-700 text-sm md:text-2xl">
                   {item.place}
                 </span>
               </div>
 
               {/* Time badge */}
-              <span className="font-bold text-sm md:text-base text-[#487800] shrink-0">
+              <span className="font-bold text-sm md:text-2xl text-[#487800] shrink-0">
                 {item.time}
               </span>
             </div>
