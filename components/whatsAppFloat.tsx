@@ -50,6 +50,7 @@ export default function FloatingButtons() {
       </button>
 
       {/* Phone Call Button */}
+      <button>
       <a
         href={`tel:+${PHONE_NUMBER}`}
         className="btn-shine flex items-center justify-center gap-2 bg-blue-500 hover:bg-blue-600 text-white
@@ -62,6 +63,7 @@ export default function FloatingButtons() {
           Call Us
         </span>
       </a>
+      </button>
 
     </div>
   )

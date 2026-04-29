@@ -7,31 +7,40 @@ import {
 } from "@/components/ui/dialog"
 import ContactForm from "./contactForm"
 import Image from "next/image"
-import { useEffect } from "react"
-import { useDialog } from "@/app/context/dialog-context";
+import { useDialog } from "@/app/context/dialog-context"
+import { X } from "lucide-react"
 
 export function DialogCloseButton() {
 
   const { open, closeDialog, openDialog } = useDialog()
-
-
-
-  // Open dialog on page load
-  
 
   return (
     <Dialog
       open={open}
       onOpenChange={(isOpen) => isOpen ? openDialog() : closeDialog()}
     >
-      <DialogContent className="md:max-w-[800px] p-0 overflow-hidden">
+      <DialogContent className="
+        w-[95vw] max-w-[95vw] md:max-w-[800px]
+        max-h-[90vh]
+        p-0 overflow-hidden
+        rounded-xl
+      ">
 
         <DialogTitle className="sr-only">Contact Form</DialogTitle>
 
-        <div className="flex flex-col md:flex-row">
+        {/* Mobile Close Button — top right */}
+        <button
+          onClick={closeDialog}
+          className="absolute top-3 right-3 z-50 bg-white rounded-full p-1.5 shadow-md hover:bg-gray-100 transition md:hidden"
+        >
+          <X className="w-4 h-4 text-gray-700" />
+        </button>
 
-          {/* Left - Image */}
-          <div className="relative w-full md:w-1/2 min-h-[400px]">
+        {/* Scrollable wrapper on mobile */}
+        <div className="flex flex-col md:flex-row overflow-y-auto max-h-[90vh] md:overflow-hidden md:max-h-none">
+
+          {/* Left - Image — hidden on mobile */}
+          <div className="hidden md:block relative md:w-1/2 min-h-[400px]">
             <Image
               alt="Property Image"
               fill
@@ -43,7 +52,7 @@ export function DialogCloseButton() {
           </div>
 
           {/* Right - Form */}
-          <div className="w-full md:w-1/2 p-6 flex flex-col gap-4">
+          <div className="w-full md:w-1/2 p-4 md:p-6 flex flex-col gap-3 md:gap-4">
             <ContactForm />
             <Button
               variant="outline"

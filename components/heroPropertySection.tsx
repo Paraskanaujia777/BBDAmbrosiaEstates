@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Image from "next/image"
-import { ChevronLeft, ChevronRight, House, Star } from "lucide-react"
+import { ChevronLeft, ChevronRight, House, Phone, Star } from "lucide-react"
 import { useDialog } from "@/app/context/dialog-context"
 
 const images = [
@@ -20,15 +20,15 @@ const offers = [
 
 const details = [
   { label: "Land Parcel", value: "25 Acres" },
-  { label: "Floors",      value: "G+2" },
-  { label: "Possession",  value: "December 2030" },
+  { label: "Floors", value: "G+2" },
+  { label: "Possession", value: "December 2030" },
 ]
 
 const stats = [
-  { label: "Prime Location",    value: "Price On Demand" },
+  { label: "Prime Location", value: "Price On Demand" },
   { label: "Residential Villas", value: "Price On Demand" },
-  { label: "Green City Villas",  value: "Price On Demand" },
-  { label: "360 Degree View",    value: "Price On Demand" },
+  { label: "Green City Villas", value: "Price On Demand" },
+  { label: "360 Degree View", value: "Price On Demand" },
 ]
 
 export default function PropertyHero() {
@@ -54,9 +54,8 @@ export default function PropertyHero() {
         {images.map((src, i) => (
           <div
             key={i}
-            className={`absolute inset-0 transition-opacity duration-700 ${
-              i === current ? "opacity-100" : "opacity-0"
-            }`}
+            className={`absolute inset-0 transition-opacity duration-700 ${i === current ? "opacity-100" : "opacity-0"
+              }`}
           >
             <Image
               src={src}
@@ -92,9 +91,8 @@ export default function PropertyHero() {
             <button
               key={i}
               onClick={() => setCurrent(i)}
-              className={`h-2 rounded-full transition-all ${
-                i === current ? "bg-white w-6" : "bg-white/50 w-2"
-              }`}
+              className={`h-2 rounded-full transition-all ${i === current ? "bg-white w-6" : "bg-white/50 w-2"
+                }`}
             />
           ))}
         </div>
@@ -117,15 +115,14 @@ export default function PropertyHero() {
             <div>
               <h1 className="text-lg md:text-2xl font-bold text-gray-900 text-center
               ">
-                BBD Ambrosia Estates 
+                BBD Ambrosia Estates
               </h1>
-              <p className="text-gray-500 text-xs md:text-sm mt-1 text-center
+              <p className="text-gray-500 text-md md:text-lg mt-1 text-center
               ">
                 At BBD Green City, Faizabad Road, Lucknow{" "}
                 <br />
-                <span className="font-medium text-gray-700 text-center"><p className="text-center">
+                <span className="font-medium text-gray-700 text-center">
                   By Viraj Constructions Pvt.Ltd.
-                  </p>
                 </span>
               </p>
             </div>
@@ -163,7 +160,7 @@ export default function PropertyHero() {
 
             {/* Price */}
             <div className="text-center">
-              <p className="text-gray-500 text-xs md:text-sm">
+              <p className="text-gray-500 text-md md:text-lg">
                 Luxurious <strong>4.5 & 5.5 BHK</strong> Starts At
               </p>
               <p className="text-xl md:text-3xl font-bold text-gray-900 mt-1">
@@ -175,10 +172,15 @@ export default function PropertyHero() {
             {/* Button */}
             <button
               onClick={openDialog}
-              className="w-full bg-[rgb(72,120,0)] hover:bg-[#3a4e10] btn-shine cursor-pointer text-white py-2 md:py-3 rounded font-medium text-sm md:text-base transition-colors"
+              className="w-full bg-[rgb(72,120,0)] hover:bg-[#3a4e10] btn-shine cursor-pointer text-white py-2 md:py-3 rounded font-medium text-sm md:text-base transition-colors animate-bounce-slow
+              "
             >
               Download Brochure
             </button>
+
+
+
+
 
           </div>
         </div>
@@ -186,7 +188,7 @@ export default function PropertyHero() {
       </div>
 
       {/* ── Stats Bar ── */}
-    
+
     </>
   )
 }

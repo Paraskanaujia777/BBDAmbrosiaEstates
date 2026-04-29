@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "BBD Ambrosia Estates ",
+  title: "BBD Ambrosia Estates | Premium 4 & 5 BHK Luxury Villas ",
   description: "Luxury Villas in BBD Green City Lucknow",
 };
 

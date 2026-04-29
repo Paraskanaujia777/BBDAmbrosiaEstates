@@ -3,7 +3,7 @@
 import { Button } from "../ui/button";
 import { useDialog } from "@/app/context/dialog-context";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, Phone, X } from "lucide-react";
 
 const NavItems = [
     { label: "Overview", href: '#overview', id: 1 },
@@ -15,6 +15,8 @@ const NavItems = [
 ]
 
 function Header() {
+    const phone = "+918858544549";
+
     const { openDialog } = useDialog()
     const [menuOpen, setMenuOpen] = useState(false)
 
@@ -70,6 +72,21 @@ function Header() {
                             Download Brochure
                         </Button>
                     </div>
+                    <div className="hidden md:flex">
+                        
+
+                        <Button asChild variant="outline" className="animate-bounce-slow">
+                            <a
+                                href={`tel:${phone}`}
+                                className="btn-shine w-full text-sm cursor-pointer flex items-center gap-2 justify-center 
+    !bg-white !text-black  
+    hover:!bg-[#3a4e10] hover:!text-white transition-colors"
+                            >
+                                <Phone className="w-5 h-5" />
+                                <span className="font-medium text-sm">+91-8858544549 </span>
+                            </a>
+                        </Button>
+                    </div>
 
                 </div>
 
@@ -115,7 +132,26 @@ function Header() {
                             >
                                 Download Brochure
                             </Button>
+
+
                         </div>
+
+                        {/* const phone = "+918858544549"; */}
+
+                        <Button asChild variant="outline">
+                            <a
+                                href={`tel:${phone}`}
+                                className="btn-shine w-full text-sm cursor-pointer flex items-center gap-2 justify-center 
+    !bg-white !text-black 
+    hover:!bg-[#3a4e10] hover:!text-white transition-colors"
+                            >
+                                <Phone className="w-5 h-5" />
+                                <span className="font-medium text-sm">Call Us</span>
+                            </a>
+                        </Button>
+
+
+
 
                     </div>
                 )
