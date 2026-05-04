@@ -23,7 +23,25 @@ export default function Home() {
         {/* About + Contact Form */}
         <AboutSection />
 
-        {/* Amenities Icons */}
+       
+
+
+        {/* Floor Plans */}
+        <div id="floorplan">
+          <FloorPlanSection />
+        </div>
+
+        {/* Pricing */}
+        <div id="pricing">
+          <PricingSection />
+        </div>
+
+        
+        {/* Hero CTA Section */}
+        <HeroSection />
+
+
+         {/* Amenities Icons */}
         <AllIcons />
 
         {/* Amenities Section */}
@@ -31,18 +49,7 @@ export default function Home() {
           <AmenitiesSection />
         </div>
 
-        {/* Hero CTA Section */}
-        <HeroSection />
-
-        {/* Pricing */}
-        <div id="pricing">
-          <PricingSection />
-        </div>
-
-        {/* Floor Plans */}
-        <div id="floorplan">
-          <FloorPlanSection />
-        </div>
+        
 
         {/* Location */}
         <div id="location">

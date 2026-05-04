@@ -1,4 +1,4 @@
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import ContactForm from "./contactForm";
 
 function AboutSection() {
@@ -10,7 +10,7 @@ function AboutSection() {
                 {/* LEFT CONTENT */}
                 <div className="w-full lg:w-1/2">
                     <h1 className="font-bold text-2xl md:text-3xl lg:text-4xl mb-4 text-[#487800] leading-tight">
-                        BBD Ambrosia Estate – Premium Villas on BBD Green City Faizabad Road, Lucknow
+                        BBD Ambrosia Estate – Premium Villas in BBD Green City Faizabad Road, Lucknow
                     </h1>
 
                     <p className="text-sm md:text-base text-gray-700 mb-4">
@@ -37,9 +37,22 @@ function AboutSection() {
                 {/* RIGHT FORM */}
                 <div className="w-full lg:w-1/2">
                     <Card className="shadow-lg rounded-2xl">
+
+                        {/* Header */}
+                        <CardHeader className="bg-gray-100 border-b border-gray-200 rounded-t-2xl px-4 md:px-6 py-4 md:py-6">
+                            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 text-center">
+                                Get In Touch With Us
+                            </h2>
+                            <p className="text-gray-500 text-xs sm:text-sm text-center mt-1">
+                                Wish to know more?
+                            </p>
+                        </CardHeader>
+
+                        {/* Form */}
                         <CardContent className="p-4 md:p-6">
                             <ContactForm />
                         </CardContent>
+
                     </Card>
                 </div>
 

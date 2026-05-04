@@ -1,8 +1,8 @@
 'use client'
+
 import { useState } from "react"
-import { Button } from "@/components/ui/button"
+import { PhoneCall } from "lucide-react"
 import { useDialog } from "@/app/context/dialog-context"
-import { Lock } from "lucide-react"
 
 const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbwDnqIXi2AHbZM1iTkf4vn0BbbVlj-27B1mWEsisTOx4CwWuE0Bo3fYSxtHnBJ69-G6/exec"
 
@@ -13,14 +13,13 @@ export default function ContactForm() {
     fullName: "",
     phoneNumber: "",
     emailAddress: "",
-    message: "",
   })
 
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle")
+  const [status, setStatus] = useState<"idle" | "loading" | "success">("idle")
 
   const handleSubmit = async () => {
     if (!formData.fullName || !formData.phoneNumber) {
-      alert("Please fill Full Name and Phone Number!")
+      alert("Please fill Name and Phone!")
       return
     }
 
@@ -34,103 +33,81 @@ export default function ContactForm() {
       })
 
       setStatus("success")
-      setFormData({ fullName: "", phoneNumber: "", emailAddress: "", message: "" })
+      setFormData({ fullName: "", emailAddress: "", phoneNumber: "" })
 
       setTimeout(() => {
         closeDialog()
         setStatus("idle")
       }, 2000)
 
-    } catch (error) {
-      console.error("Error:", error)
-      setStatus("error")
+    } catch {
+      setStatus("idle")
     }
   }
 
   return (
-    <div className="max-w-2xl mx-auto rounded-lg overflow-hidden shadow-md border border-gray-200">
+    <div className="flex flex-col gap-4">
 
-      {/* Header */}
-      <div className="bg-gray-100 py-6 px-6 text-center border-b border-gray-300">
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">
-          Get In Touch With Us
-        </h2>
-        <p className="text-gray-500 text-sm">Wish to know more?</p>
+      {/* Heading */}
+      <h2 className="text-sm md:text-base font-semibold text-gray-900">
+        Register Here And Avail The{" "}
+        <span className="text-[#3a4e10] font-bold">Best Offers!!</span>
+      </h2>
+
+      {/* Name */}
+      <div className="border-b border-gray-300 pb-2">
+        <input
+          type="text"
+          placeholder="Name *"
+          value={formData.fullName}
+          onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+          className="w-full text-sm outline-none text-gray-700 placeholder-gray-400"
+        />
       </div>
 
-      {/* Form Body */}
-      <div className="bg-white p-4 md:p-6 flex flex-col gap-3">
-
-        {/* Full Name & Phone - side by side on desktop */}
-        <div className="flex flex-col md:flex-row gap-3">
-          <input
-            type="text"
-            placeholder="Full Name *"
-            value={formData.fullName}
-            onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-            className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-gray-400"
-          />
-          <input
-            type="tel"
-            placeholder="Phone Number *"
-            value={formData.phoneNumber}
-            onChange={(e) => setFormData({ ...formData, phoneNumber: e.target.value })}
-            className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-gray-400"
-          />
-        </div>
-
-        {/* Email */}
+      {/* Email */}
+      <div className="border-b border-gray-300 pb-2">
         <input
           type="email"
-          placeholder="Email Address"
+          placeholder="Email Address (Optional)"
           value={formData.emailAddress}
           onChange={(e) => setFormData({ ...formData, emailAddress: e.target.value })}
-          className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-gray-400"
+          className="w-full text-sm outline-none text-gray-700 placeholder-gray-400"
         />
-
-        {/* Message */}
-        <textarea
-          placeholder="Message"
-          rows={4}
-          value={formData.message}
-          onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-          className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-gray-400 resize-y"
-        />
-
-        {/* Submit Button */}
-        <Button
-          onClick={handleSubmit}
-          disabled={status === "loading"}
-          className="w-full bg-gray-900 text-white py-4 rounded-lg text-lg hover:bg-gray-700 transition-colors btn-shine"
-        >
-          {status === "loading" ? "Submitting..." : "Submit"}
-        </Button>
-
-        {/* Privacy Note */}
-        <p className="text-center text-gray-400 text-xs flex items-center justify-center gap-1">
-          <Lock className="w-3 h-3" />
-          We hate spam and we respect your privacy.
-        </p>
-
-        {/* Success Message */}
-        {status === "success" && (
-          <div className="bg-green-50 border border-green-200 rounded-lg p-3 text-center">
-            <p className="text-green-600 text-sm font-medium">
-              ✅ Thank you! We will contact you soon.
-            </p>
-          </div>
-        )}
-
-        {/* Error Message */}
-        {status === "error" && (
-          <div className="bg-red-50 border border-red-200 rounded-lg p-3 text-center">
-            <p className="text-red-500 text-sm font-medium">
-              ❌ Something went wrong. Please try again.
-            </p>
-          </div>
-        )}
-
       </div>
+
+      {/* Phone */}
+      <div className="border-b border-gray-300 pb-2 flex items-center gap-2">
+        <span className="text-sm text-gray-700 shrink-0 font-medium">
+          India (+91)
+        </span>
+        <span className="text-gray-300">|</span>
+        <input
+          type="tel"
+          placeholder="Phone number *"
+          value={formData.phoneNumber}
+          onChange={(e) => setFormData({ ...formData, phoneNumber: e.target.value })}
+          className="w-full text-sm outline-none text-gray-700 placeholder-gray-400"
+        />
+      </div>
+
+      {/* Submit Button */}
+      <button
+        onClick={handleSubmit}
+        disabled={status === "loading"}
+        className="btn-shine w-full bg-[rgb(72,120,0)] hover:bg-[#3a4e10] text-white py-3 rounded font-bold text-sm transition-colors flex items-center justify-center gap-2"
+      >
+        <PhoneCall className="w-4 h-4" />
+        {status === "loading" ? "Submitting..." : "Get Instant Call Back"}
+      </button>
+
+      {/* Success */}
+      {status === "success" && (
+        <p className="text-green-600 text-xs text-center font-medium">
+          ✅ Thank you! We will call you back soon.
+        </p>
+      )}
+
     </div>
   )
 }

@@ -96,7 +96,7 @@ export default function AmenitiesSection() {
           className="overflow-x-auto scroll-smooth scrollbar-hide"
         >
           {/* Mobile - single row */}
-          <div className="flex md:hidden gap-3 w-max">
+          <div className="grid grid-rows-2 grid-flow-col gap-3 w-max md:hidden">
             {amenities.map((item) => (
               <div
                 key={item.id}

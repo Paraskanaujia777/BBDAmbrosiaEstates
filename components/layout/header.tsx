@@ -15,7 +15,7 @@ const NavItems = [
 ]
 
 function Header() {
-    const phone = "+918858544549";
+    const phone = "+919918016160";
 
     const { openDialog } = useDialog()
     const [menuOpen, setMenuOpen] = useState(false)
@@ -83,7 +83,7 @@ function Header() {
     hover:!bg-[#3a4e10] hover:!text-white transition-colors"
                             >
                                 <Phone className="w-5 h-5" />
-                                <span className="font-medium text-sm">+91-8858544549 </span>
+                                <span className="font-medium text-sm">+91-9918016160 </span>
                             </a>
                         </Button>
                     </div>

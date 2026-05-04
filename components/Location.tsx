@@ -1,13 +1,15 @@
+import { MapPinned } from "lucide-react"
+
 export default function LocationAdvantages() {
 
   const locations = [
     { place: "Dr. Akhilesh Das Gupta School", time: "1 Min" },
-    { place: "Crown Mall",                    time: "2 Mins" },
-    { place: "Gomti Nagar Railway Station",   time: "9 Mins" },
-    { place: "Amar Shaheed Path",             time: "6 Mins" },
-    { place: "Chandan Hospital",              time: "5 Mins" },
-    { place: "Outer Ring Road",               time: "4 Mins" },
-    { place: "Amausi Airport",               time: "45 Mins" },
+    { place: "Crown Mall", time: "2 Mins" },
+    { place: "Gomti Nagar Railway Station", time: "9 Mins" },
+    { place: "Amar Shaheed Path", time: "6 Mins" },
+    { place: "Chandan Hospital", time: "5 Mins" },
+    { place: "Outer Ring Road", time: "4 Mins" },
+    { place: "Amausi Airport", time: "45 Mins" },
   ]
 
   return (
@@ -26,35 +28,44 @@ export default function LocationAdvantages() {
       </div>
 
       {/* Content - Locations + Map */}
-      <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
+      <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-start ">
 
         {/* Location List */}
-        <div className="w-full md:flex-1 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-3 md:gap-5">
+        <div className="w-full md:flex-1 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-3 md:gap-5  ">
           {locations.map((item, index) => (
-            <div
-              key={index}
-              className="flex items-center justify-between md:justify-start gap-2 bg-gray-50 md:bg-transparent border md:border-0 border-gray-200 rounded-lg md:rounded-none px-4 md:px-0 py-3 md:py-0"
-            >
-              {/* Location dot */}
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 rounded-full bg-[#487800] shrink-0" />
-                <span className="text-gray-700 text-sm md:text-2xl">
-                  {item.place}
+           
+              <div
+                key={index}
+                className="flex items-center justify-between md:justify-between gap-2 bg-gray-50 md:bg-transparent border md:border-0 border-gray-200 rounded-lg md:rounded-none px-4 md:px-0 py-3 md:py-0 border-b border-gray-200 md:border-b md:border-gray-200 last:border-b-0"
+              >
+                {/* Location dot */}
+                <div className="flex items-center gap-3">
+                  {/* <div className="w-2 h-2 rounded-full bg-[#3ae410] shrink-0" /> */}
+                  <MapPinned className="text-[#487800]" />
+                  <span className="text-gray-700 text-sm md:text-xl">
+                    {item.place}
+                  </span>
+                </div>
+
+                {/* Time badge */}
+                <span className="font-bold text-sm md:text-xl text-[#487800] shrink-0">
+                  {item.time}
                 </span>
               </div>
 
-              {/* Time badge */}
-              <span className="font-bold text-sm md:text-2xl text-[#487800] shrink-0">
-                {item.time}
-              </span>
-            </div>
+              
+
+
+          
+
+
           ))}
         </div>
 
         {/* Google Map */}
         <div className="w-full md:flex-1 h-[250px] sm:h-[320px] md:h-[380px] rounded-lg overflow-hidden shadow-md">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.9!2d80.9!3d26.85!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDUxJzAwLjAiTiA4MMKwNTQnMDAuMCJF!5e0!3m2!1sen!2sin!4v1"
+            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3558.797659971257!2d81.055943!3d26.878169!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjbCsDUyJzQxLjQiTiA4McKwMDMnMjEuNCJF!5e0!3m2!1sen!2sin!4v1777655918939!5m2!1sen!2sin"
             width="100%"
             height="100%"
             style={{ border: 0 }}
@@ -63,6 +74,7 @@ export default function LocationAdvantages() {
             referrerPolicy="no-referrer-when-downgrade"
           />
         </div>
+        {/* <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3558.797659971257!2d81.055943!3d26.878169!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjbCsDUyJzQxLjQiTiA4McKwMDMnMjEuNCJF!5e0!3m2!1sen!2sin!4v1777655918939!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> */}
 
       </div>
     </div>

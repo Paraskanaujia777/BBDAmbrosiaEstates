@@ -26,7 +26,7 @@ export function DialogProvider({ children }: { children: React.ReactNode }) {
 
     timerRef.current = setTimeout(() => {
       setOpen(true)
-    }, 2 * 60 * 1000) // ← 2 minutes
+    }, 1 * 60 * 1000) // ← 1 minutes
   }
 
   useEffect(() => {

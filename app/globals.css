@@ -167,7 +167,7 @@
 }
 
 .animate-bounce-slow {
-  animation: bounce-slow 2s ease-in-out infinite;
+  animation: bounce-slow 1s ease-in-out infinite;
 }
 
 
